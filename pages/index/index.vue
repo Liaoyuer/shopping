@@ -15,9 +15,12 @@
 				<input class="" type="text" value="" placeholder="搜索关键词" />
 				<image src="../../static/images/home/search.png" mode=""></image>
 			</view>
-			<view class="">
-				<u-swiper :list="list"></u-swiper>
+			<view class="swiper">
+				<u-swiper :list="list" :effect3d="true" height="340" border-radius="20" bg-color="none"></u-swiper>
 			</view>
+		</view>
+		<view class="goods-classify width-90">
+			
 		</view>
 	</view>
 </template>
@@ -25,7 +28,13 @@
 <script>
 	export default {
 		data() {
-			return {}
+			return {
+				list: [
+					'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=339984553,3509384023&fm=26&gp=0.jpg',
+					'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1786439814,215205363&fm=26&gp=0.jpg',
+					'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600399666309&di=3670afbef52571b71b98f4562043498e&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F8%2F57ea3c2d57be6.jpg'
+				]
+			}
 		},
 		onLoad() {
 
@@ -44,7 +53,7 @@
 	.homepage{
 		width: 750rpx;
 		height: 100%;
-		background-color: red;
+		background-color: pink;
 		.page-header{
 			height: 514rpx;
 			background: #fa5376;
@@ -79,6 +88,18 @@
 				}
 				// width: 94%;
 			}
+			.swiper{
+				padding: 20rpx 0;
+				height: 356rpx;
+				background: rgba(0,0,0,0);
+			}
+		}
+		.goods-classify{
+			height: 361rpx;
+			margin-top: 20rpx;
+			box-shadow: 0px 0px 5px #eee;
+			border-radius: 10rpx;
+			background: #fff;
 		}
 	}
 </style>
