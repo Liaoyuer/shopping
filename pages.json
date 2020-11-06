@@ -23,6 +23,7 @@
             "path" : "pages/classify/classify",
             "style" :                                                                                    
             {
+				"navigationStyle": "custom",
                 "navigationBarTitleText": "分类",
                 "enablePullDownRefresh": false
             }

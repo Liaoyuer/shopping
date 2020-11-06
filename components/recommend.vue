@@ -1,27 +1,27 @@
 <template>
-	<view class="recommend" style="background: #F8F8F8;overflow: hidden;">
-		<view class="box">
+	<view class="recommend flex justify-between flex-wrap" style="background: #F8F8F8;overflow: hidden;">
+		<view class="box" v-for="(item,index) in dataList" :key="item.goods_id">
 			<view class="top">
-				<image src="https://img.zcool.cn/community/01e47655efeee832f875a132e43a9c.png@1280w_1l_2o_100sh.png" mode=""></image>
+				<image :src="item.img" mode=""></image>
+				<image class="tags" v-if="item.baoyou" :src="tagImg[0]"></image>
 			</view>
 			<view class="bottom-text">
-				DUNKINDONUTS唐恩都乐美国甜甜圈6个礼盒装 随机搭配6款
+				{{item.title}}
 			</view>
 			<view class="price">
-				<text class="new-price">￥ 35.90</text>
-				<text class="old-price">￥ 45.90</text>
+				<text class="new-price">￥ {{item.money}}</text>
+				<text class="old-price">￥ {{item.hmoney}}</text>
 			</view>
 			<view class="goumai flex justify-between">
 				<view class="text flex">
-					<text class="text-1">优惠券</text>
-					<text class="text-2">包邮</text>
+					<text class="text-1" v-if="item.youhui">优惠券</text>
+					<text class="text-2" v-if="item.baoyou">包邮</text>
 				</view>
 				<view class="cart">
-					<image src="../../static/images/tabBar/cart-default.png" mode=""></image>
+					<image src="../static/images/tabBar/cart-default.png" mode=""></image>
 				</view>
 			</view>
 		</view>
-		
 	</view>
 </template>
 
@@ -30,7 +30,9 @@
 		props:{dataList: {type: Array}},
 		data(){
 			return{
-				
+				tagImg:[
+						  '/static/images/home/five.png',
+				]
 			}
 		}
 	}
@@ -39,13 +41,15 @@
 <style lang="scss">
 	.recommend{
 		width: 100%;
-		margin-bottom: 500rpx;
 		.box{
+			
 			width: 48%;
 			height: 530rpx;
 			border-radius: 16rpx;
-			background-color: pink;
+			background-color: #fff;
+			margin-bottom: 20rpx;
 			.top{
+				position: relative;
 				height: 60%;
 				border-radius: 16rpx;
 				image{
@@ -53,6 +57,13 @@
 					height: 100%;
 					border-radius: 16rpx;
 					display: block;
+				}
+				.tags{
+					position: absolute;
+					width: 25%;
+					height: 25%;
+					top: 0;
+					left: 0;
 				}
 			}
 			.bottom-text{
@@ -63,6 +74,7 @@
 				line-height: 32rpx;
 				overflow: hidden;
 				font-size: 24rpx;
+				color: #000;
 				font-weight: block;
 			}
 			.price{
@@ -85,13 +97,17 @@
 					.text-1,.text-2{
 						display: block;
 						text-align: center;
-						height: 40rpx;
-						line-height: 40rpx;
+						width: 100rpx;
+						height: 38rpx;
+						line-height: 38rpx;
 						box-sizing: border-box;
-						padding: 4rpx;
+						// padding: 4rpx;
 						border-radius: 12rpx;
 						color: #fa436a;
 						background-color: #FAEFF7;
+					}
+					.text-1{
+						margin-right: 10rpx;
 					}
 				}
 				.cart{

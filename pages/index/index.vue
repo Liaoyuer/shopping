@@ -12,13 +12,12 @@
 				</view>
 			</view>
 			<!-- 搜索条 -->
-			<view class="width-90 search-bar flex justify-between">
-				<input class="" type="text" value="" placeholder="搜索关键词" />
-				<image src="../../static/images/home/search.png" mode=""></image>
+			<view class="width-90">
+				<search></search>
 			</view>
 			<!-- 轮播 -->
 			<view class="swiper">
-				<u-swiper :list="list" :effect3d="true" height="340" border-radius="20" bg-color="none"></u-swiper>
+				<u-swiper :list="list" :effect3d="true" indicator-pos="bottomLeft" height="340" border-radius="20" bg-color="none"></u-swiper>
 			</view>
 		</view>
 		<!-- 分类宫格 -->
@@ -61,14 +60,17 @@
 			<u-icon class="icon" name="arrow-right" color="#ccc" size="32"></u-icon>
 		</view>
 		<!-- 推荐商品列表 -->
-		<view class="recommend width-90">
-			<recommend :dataList="dataList"></recommend>
+		<view class="recommend">
+			<view class="width-90">
+				<recommend :dataList="dataList"></recommend>
+			</view>
 		</view>
 	</view>
 </template>
 
 <script>
-	import recommend from '../components/recommend.vue'
+	import recommend from '../../components/recommend.vue'
+	import search from '../../components/search.vue'
 	export default {
 		data() {
 			return {
@@ -78,45 +80,45 @@
 					'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600399666309&di=3670afbef52571b71b98f4562043498e&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F8%2F57ea3c2d57be6.jpg'
 				],
 				categoryList: [{ //分类列表
-					id: 1,
-					name: '饼干',
-					img: "/static/images/class/food-cookie.png"
-				}, {
-					id: 2,
-					name: '布丁',
-					img: "/static/images/class/food-pudding.png"
-				}, {
-					id: 3,
-					name: '甜甜圈',
-					img: "/static/images/class/food-doughnut.png"
-				}, {
-					id: 4,
-					name: '面包',
-					img: "/static/images/class/food-bread.png"
-				}, {
-					id: 5,
-					name: '薯片',
-					img: "/static/images/class/food-chips.png"
-				}, {
-					id: 6,
-					name: '热狗',
-					img: "/static/images/class/food-hotdog.png"
-				}, {
-					id: 7,
-					name: '冰淇淋',
-					img: "/static/images/class/food-popsicle.png"
-				}, {
-					id: 8,
-					name: '奶油草莓',
-					img: "/static/images/class/food-strawberry.png"
-				}, {
-					id: 9,
-					name: '披萨',
-					img: "/static/images/class/food-pizza.png"
-				}, {
-					id: 10,
-					name: '蛋黄酥',
-					img: "/static/images/class/food-eggyolkcake.png"
+						id: 1,
+						name: '饼干',
+						img: "/static/images/class/food-cookie.png"
+					}, {
+						id: 2,
+						name: '布丁',
+						img: "/static/images/class/food-pudding.png"
+					}, {
+						id: 3,
+						name: '甜甜圈',
+						img: "/static/images/class/food-doughnut.png"
+					}, {
+						id: 4,
+						name: '面包',
+						img: "/static/images/class/food-bread.png"
+					}, {
+						id: 5,
+						name: '薯片',
+						img: "/static/images/class/food-chips.png"
+					}, {
+						id: 6,
+						name: '热狗',
+						img: "/static/images/class/food-hotdog.png"
+					}, {
+						id: 7,
+						name: '冰淇淋',
+						img: "/static/images/class/food-popsicle.png"
+					}, {
+						id: 8,
+						name: '奶油草莓',
+						img: "/static/images/class/food-strawberry.png"
+					}, {
+						id: 9,
+						name: '披萨',
+						img: "/static/images/class/food-pizza.png"
+					}, {
+						id: 10,
+						name: '蛋黄酥',
+						img: "/static/images/class/food-eggyolkcake.png"
 				}],
 				// 滚屏通知
 				notice:[
@@ -428,16 +430,13 @@
 
 		},
 		components:{
-			recommend
+			recommend,
+			search
 		}
 	}
 </script>
 
 <style lang="scss">
-	.width-90{
-		width: 94%;
-		margin: 0 auto;
-	}
 	.homepage{
 		width: 750rpx;
 		// height: 100%;
@@ -455,26 +454,6 @@
 					height: 35rpx;
 					margin-right: 10rpx;
 				}
-			}
-			.search-bar{
-				height: 60rpx;
-				border-radius: 20px;
-				margin-top: 25rpx;
-				background-color: #fff;
-				padding: 0 35rpx;
-				box-sizing: border-box;
-				image{
-					width: 40rpx;
-					height: 40rpx;
-					padding-top: 10rpx;
-					display: block;
-				}
-				input{
-					width: 80%;
-					height: 60rpx;
-					font-size: 18rpx;
-				}
-				// width: 94%;
 			}
 			.swiper{
 				padding: 20rpx 0;
@@ -569,6 +548,9 @@
 		}
 		.recommend{
 			margin-top: 20rpx;
+			padding-top: 5rpx;
+			background: #f8f8f8;
+			margin-bottom: 500rpx;
 		}
 	}
 </style>
