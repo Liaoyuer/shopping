@@ -1,37 +1,44 @@
 <template>
-	<view class="recommend flex justify-between flex-wrap" style="background: #F8F8F8;overflow: hidden;">
-		<view class="box" v-for="(item,index) in dataList" :key="item.goods_id">
-			<view class="top">
-				<image :src="item.img" mode=""></image>
-				<image class="tags" v-if="item.baoyou" :src="tagImg[0]"></image>
-			</view>
-			<view class="bottom-text">
-				{{item.title}}
-			</view>
-			<view class="price">
-				<text class="new-price">￥ {{item.money}}</text>
-				<text class="old-price">￥ {{item.hmoney}}</text>
-			</view>
-			<view class="goumai flex justify-between">
-				<view class="text flex">
-					<text class="text-1" v-if="item.youhui">优惠券</text>
-					<text class="text-2" v-if="item.baoyou">包邮</text>
+	<view class="">
+		<!-- 宫格布局 -->
+		<view v-if="pailie=='gongge'" class="recommend flex justify-between flex-wrap" style="background: #F8F8F8;overflow: hidden;">
+			<view class="box" v-for="(item,index) in dataList" :key="item.goods_id">
+				<view class="top">
+					<image :src="item.img" mode=""></image>
+					<image class="tags" v-if="item.baoyou" :src="tagImg[0]"></image>
 				</view>
-				<view class="cart">
-					<image src="../static/images/tabBar/cart-default.png" mode=""></image>
+				<view class="bottom-text">
+					{{item.title}}
+				</view>
+				<view class="price">
+					<text class="new-price">￥ {{item.money}}</text>
+					<text class="old-price">￥ {{item.hmoney}}</text>
+				</view>
+				<view class="goumai flex justify-between">
+					<view class="text flex">
+						<text class="text-1" v-if="item.youhui">优惠券</text>
+						<text class="text-2" v-if="item.baoyou">包邮</text>
+					</view>
+					<view class="cart">
+						<image src="../static/images/tabBar/cart-default.png" mode=""></image>
+					</view>
 				</view>
 			</view>
+		</view>
+		<!-- 列表布局 -->
+		<view class="list">
+			
 		</view>
 	</view>
 </template>
 
 <script>
 	export default{
-		props:{dataList: {type: Array}},
+		props:{dataList: {type: Array},pailie:{type: String}},
 		data(){
 			return{
 				tagImg:[
-						  '/static/images/home/five.png',
+					'/static/images/home/five.png',
 				]
 			}
 		}
@@ -120,6 +127,9 @@
 				}
 			}
 		}
+		
+	}
+	.list{
 		
 	}
 </style>

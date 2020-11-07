@@ -62,7 +62,7 @@
 		<!-- 推荐商品列表 -->
 		<view class="recommend">
 			<view class="width-90">
-				<recommend :dataList="dataList"></recommend>
+				<recommend :dataList="dataList" :pailie="pailie"></recommend>
 			</view>
 		</view>
 	</view>
@@ -74,6 +74,7 @@
 	export default {
 		data() {
 			return {
+				pailie: "gongge",
 				list: [
 					'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=339984553,3509384023&fm=26&gp=0.jpg',
 					'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1786439814,215205363&fm=26&gp=0.jpg',

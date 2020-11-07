@@ -11,7 +11,7 @@
 				</view>
 			</view>
 			<view class="goodsList">
-				<view class="goodsList-top flex">
+				<view class="goodsList-top flex justify-end">
 					<text>销量</text>
 					<view class="iconup flex-wrap">
 						<u-icon name="arrow-up-fill" color="#999999" size="14"></u-icon>
@@ -124,6 +124,7 @@
 				.goodsList-top{
 					width: 100%;
 					height: 70rpx;
+					line-height: 70rpx;
 					color: #999999;
 					font-size: 26rpx;
 				}
