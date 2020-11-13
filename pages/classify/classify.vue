@@ -439,7 +439,6 @@
 			height: 100%;
 			.menu{
 				width: 26%;
-				height: 100%;
 				background: #f8f8f8;
 				.menu-item{
 					width: 100%;
@@ -471,7 +470,6 @@
 					width: 100%;
 					height: 100%;
 					background: #fff;
-					padding-bottom: 200rpx;
 				}
 			}
 		}

@@ -16,9 +16,9 @@
 	/*每个页面公共css */
 	@import 'uview-ui/theme.scss';
 	@import url("./static/css/index.css");
-	@import url('https://at.alicdn.com/t/font_2148552_8vaxaqyesjy.css');
+	@import url('https://at.alicdn.com/t/font_2148552_ma8wva48j5e.css');
 	uni-page-body,#app{
-		height: 100%;
+		// height: 100%;
 	}
 	
 </style>

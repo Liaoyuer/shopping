@@ -60,8 +60,7 @@
 		<view class="cart-bottom">
 			<view class="flex justify-between width-90">
 				<view class="cart-bottom-left">
-					<u-checkbox @change="checkboxChange" size="30" shape="circle" active-color="#fa5376" class="select-dot"></u-checkbox>
-					全选
+					<u-checkbox @change="checkboxChange" size="30" shape="circle" active-color="#fa5376" class="select-dot">全选</u-checkbox>
 				</view>
 				<view class="cart-bottom-right flex justify-between">
 					<text>合计：￥0</text>
